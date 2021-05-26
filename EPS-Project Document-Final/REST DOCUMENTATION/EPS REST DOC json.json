@@ -1,0 +1,270 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Employee Payroll System Rest Doc"
+  },
+  "host": "localhost:8080",
+  "basePath": "/EPSProj",
+  "tags": [
+    {
+      "name": "employee",
+      "description": "CRUD operations with employee"
+    },
+    {
+      "name": "salary",
+      "description": "CRUD operations with salary"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/employee/create": {
+      "post": {
+        "tags": [
+          "employee"
+        ],
+        "summary": "Add a new Employee",
+        "description": "",
+        "operationId": "addEmployee",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Employee object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/employee/update": {
+      "put": {
+        "tags": [
+          "employee"
+        ],
+        "summary": "Update an existing employee",
+        "description": "",
+        "operationId": "updateEmployee",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Employee object that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/employee/allemp": {
+      "get": {
+        "tags": [
+          "employee"
+        ],
+        "summary": "Finds all employees",
+        "operationId": "allEmployee",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/employee/getEmp/{id}": {
+      "get": {
+        "tags": [
+          "employee"
+        ],
+        "summary": "Find employee by ID",
+        "description": "Returns a single Role",
+        "operationId": "getEmployee",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of employee to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Role not found"
+          }
+        }
+      }
+    },
+    "/employee/delete/{id}": {
+      "delete": {
+        "tags": [
+          "employee"
+        ],
+        "summary": "Deletes a employee",
+        "description": "",
+        "operationId": "deleteEmployee",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Employee id to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/salary/createsal": {
+      "post": {
+        "tags": [
+          "salary"
+        ],
+        "summary": "Add a new Salary",
+        "description": "",
+        "operationId": "createSalary",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Salary object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/salary/updatesal": {
+      "put": {
+        "tags": [
+          "salary"
+        ],
+        "summary": "Update an existing Salary",
+        "description": "",
+        "operationId": "updateSalary",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Salary object that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "500": {
+            "description": "Salary not Found"
+          }
+        }
+      }
+    },
+    "/salary/getSal/{id}": {
+      "get": {
+        "tags": [
+          "salary"
+        ],
+        "summary": "Finds salary by id",
+        "operationId": "getSalary",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of employee to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    }
+  }
+}
